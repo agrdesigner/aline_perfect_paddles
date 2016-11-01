@@ -1,0 +1,437 @@
+/*   Perfect Paddles Project
+
+Design Parameters:
+-----------------------------------------------------------------
+
+Colors:
+body font colour:                        #2d2d2d
+medium grey headings:                    #646464
+orange brand colour:                     #e2574c (links and buttons)
+darker orange colour:                    #b64036 (link and button hover state)
+table header background:                 #e6e6e6
+the grey table borders:                  #c8c8c8
+light yellow of the hovered table rows:  #fbf6d9
+
+Breakpoints:
+min-width: 600px
+min-width: 1140px
+
+Properties to use:
+border-radius, box-shadow, text-shadow, and linear-gradient
+
+Incorporate a responsive Google Map <iframe>
+
+**Be deployed on the web as a GitHub Pages site
+
+######
+
+# FONTS
+# FONTAWESOME
+# GENERAL
+  ## TYPOGRAPHY
+# SECTIONS
+  ## HEADER
+  ## HERO
+  ## ABOUT
+  ## RENTALS
+  ## LOCATION
+# FOOTER
+# CLEARFIX
+
+---------------------------------------------*/
+
+/*  # FONTS  -------------------------------------  */
+
+@font-face {
+    font-family: 'karla-bold';
+    src: url('../fonts/karla-bold-webfont.eot');
+    src: url('../fonts/karla-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/karla-bold-webfont.woff') format('woff'),
+         url('../fonts/karla-bold-webfont.ttf') format('truetype'),
+         url('../fonts/karla-bold-webfont.svg#karlabold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'karla-regular';
+    src: url('../fonts/karla-regular-webfont.eot');
+    src: url('../fonts/karla-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/karla-regular-webfont.woff') format('woff'),
+         url('../fonts/karla-regular-webfont.ttf') format('truetype'),
+         url('../fonts/karla-regular-webfont.svg#karlaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'pacifico';
+    src: url('../fonts/pacifico-webfont.eot');
+    src: url('../fonts/pacifico-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pacifico-webfont.woff') format('woff'),
+         url('../fonts/pacifico-webfont.ttf') format('truetype'),
+         url('../fonts/pacifico-webfont.svg#pacificoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'karla-bolditalic';
+    src: url('../fonts/karla-bolditalic-webfont.eot');
+    src: url('../fonts/karla-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/karla-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/karla-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/karla-bolditalic-webfont.svg#karlabolditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'karla-italic';
+    src: url('../fonts/karla-italic-webfont.eot');
+    src: url('../fonts/karla-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/karla-italic-webfont.woff') format('woff'),
+         url('../fonts/karla-italic-webfont.ttf') format('truetype'),
+         url('../fonts/karla-italic-webfont.svg#karlaitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*  # FONTAWESOME  -------------------------------------  */
+
+.social-media li a:before {
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'Fontawesome';
+    font-size: 1.1rem;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    content: '\f0c0';
+    transition: color 0.3s ease 0s;
+}
+
+.social-media li a:hover:before {
+  color: #b64036;
+}
+
+li a[href*="facebook.com"]::before { content: '\f09a'; }
+
+li a[href*="twitter.com"]::before { content: '\f099'; }
+
+li a[href*="instagram.com"]::before { content: '\f16d'; }
+
+li a[href*="pinterest.com"]::before { content: '\f0d2'; }
+
+li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+
+
+
+/*  # GENERAL  -------------------------------------  */
+
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+section {
+  padding: 0.5rem 1.5%;
+}
+
+div {
+  text-align: center;
+  margin: 0 auto;
+}
+
+button {
+  background-color: #e2574c;
+  border: none;
+  border-radius: 24px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  padding: 1rem;
+  transition: background 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: #b64036;
+}
+
+a {
+  color: #e2574c;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+
+}
+
+a:hover {
+  color: #b64036;
+}
+
+/*  ## TYPOGRAPHY  --------------------------------------  */
+
+p {
+  font-family: "karla-regular";
+  font-size: 1rem;
+  color: #2d2d2d;
+  line-height: 1.7rem;
+  margin: 2rem 0;
+}
+
+h2 {
+  font-family: "pacifico";
+  font-size: 3rem;
+  color: #646464;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+h3 {
+  font-family: "pacifico";
+  font-size: 2rem;
+  margin: 1.5rem 0 2.5rem 0;
+  color: #646464;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+/*  # SECTIONS  -------------------------------------  */
+
+/*  ## HEADER  --------------------------------------  */
+
+.navigation {
+  background-color: #000;
+  padding: 0.5rem 0 0 0;
+
+}
+
+header {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header img {
+  width: 225px;
+  height: auto;
+}
+
+header nav li {
+  display: inline;
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "karla-bold";
+  font-size: 1rem;
+}
+
+header nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*  ## HERO  --------------------------------------  */
+
+section.hero {
+  /*background: url(../images/kayak-bkgd.jpg) no-repeat top center;*/
+  background:
+      linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(3,3,3,0.3) 55%, rgba(0,0,0,0.3) 100%),  /* on top */
+      url(../images/kayak-bkgd.jpg);     /* in the middle */
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 4rem 2rem;
+  background-position: center top;
+}
+
+.hero p {
+  color: #fff;
+  margin: 0.5rem;
+}
+
+.hero p:nth-child(1) {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.hero p:nth-child(2n) {
+  max-width: 275px;
+  margin: 2rem auto 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0,0,0,0.5);
+  line-height: 20px;
+}
+
+.hero h2 {
+  margin: 1rem 0;
+}
+
+.hero h2, .hero h3 {
+  color: #fff;
+  text-shadow: 1.5px 1.5px 1.5px rgba(150, 150, 150, 0.6);
+}
+
+@media all and (min-width: 600px) {
+  .hero p:nth-child(2n)  {
+    max-width: 460px;
+  }
+}
+
+/*  ## ABOUT  --------------------------------------  */
+
+.image-gallery img {
+  width: 97%;
+  height: auto;
+  box-shadow: 2px 2px 7px #666;
+  margin: 0.5rem 0;
+}
+
+div.image-gallery {
+    padding: 0;
+}
+
+@media all and (min-width: 600px) {
+  .image-gallery img {
+    width: 32%;
+    height: 100%;
+  }
+
+  div.image-gallery {
+    display: flex;
+    flex: 1 1 auto;
+    padding: 1rem;
+    justify-content: space-around;
+  }
+}
+
+/*  ## RENTALS  --------------------------------------  */
+
+.rentals p {
+  text-align: left;
+  margin: 2rem 0;
+}
+
+table {
+  font-family: "karla-regular";
+  font-size: 0.9rem;
+  color: #2d2d2d;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #c8c8c8;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+th {
+  font-family: "karla-bold";
+  background-color: #e6e6e6;
+}
+
+tr:hover {
+  background-color: #fbf6d9;
+}
+
+
+/*  ## LOCATION  --------------------------------------  */
+
+.location div {
+  margin-bottom: 2rem;
+}
+
+iframe {
+  width: 100%;
+  height: 250px;
+}
+
+/*  # FOOTER  --------------------------------------  */
+
+footer {
+  background-color: #222;
+  padding: 2rem 0;
+}
+
+footer div{
+  padding-top: 0.5rem;
+}
+
+footer p, footer a {
+  color: #fff;
+  margin: 1rem 0;
+}
+
+footer p:nth-child(3n) {
+  color: #646464;
+}
+
+.social-media li {
+  display: inline;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.social-media li a {
+  text-decoration: none;
+  padding: 7px;
+}
+
+.social-media li a span {
+  margin-left: 1rem;
+  display: none;
+}
+
+
+@media all and (min-width: 600px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3.5rem 2rem 1.5rem;
+  }
+
+  .social-media li {
+    display: block;
+  }
+
+  .social-media li a span {
+    display: inline;
+  }
+
+}
+
+/*  # CLEARFIX  --------------------------------------  */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
