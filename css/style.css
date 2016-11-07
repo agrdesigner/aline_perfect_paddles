@@ -120,16 +120,19 @@ Incorporate a responsive Google Map <iframe>
     display: inline-block;
     vertical-align: top;
     font-family: 'Fontawesome';
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #fff;
     -webkit-font-smoothing: antialiased;
     content: '\f0c0';
     transition: color 0.3s ease 0s;
+    width: 0.88571429em;
+    text-align: center;
 }
 
 .social-media li a:hover:before {
   color: #b64036;
 }
+
 
 li a[href*="facebook.com"]::before { content: '\f09a'; }
 
@@ -220,25 +223,44 @@ p a {
   text-decoration: underline;
 }
 
+@media all and (min-width: 600px) {
+  h1 {
+    font-size: 4.25rem;
+  }
+  h3 {
+    font-size: 2.15rem;
+  }
+}
+
+@media all and (min-width: 1140px) {
+  h1 {
+    font-size: 6rem;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+}
+
 /*  # SECTIONS  -------------------------------------  */
 
 /*  ## HEADER  --------------------------------------  */
 
 .navigation {
   background-color: #000;
-  padding: 0.5rem 0 0 0;
 
 }
 
 header div {
   max-width: 400px;
   margin: 0 auto;
+  padding-left:1rem;
   text-align: center;
 }
 
 header img {
   width: 225px;
-  height: auto;
+  height: 45px;
+  margin-top: 0.2rem;
 }
 
 header nav li {
@@ -253,6 +275,19 @@ header nav li {
 header nav li a {
   color: #fff;
   text-decoration: none;
+}
+
+@media all and (min-width: 600px) {
+  header div {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  nav {
+    display: block;
+    width: 300px;
+  }
 }
 
 /*  ## HERO  --------------------------------------  */
@@ -304,11 +339,16 @@ section.hero {
 
 /*  ## ABOUT  --------------------------------------  */
 
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .image-gallery img {
   width: 97%;
   height: auto;
   box-shadow: 2px 2px 7px #666;
-  margin: 0.5rem 0;
+  margin: 1.2rem 0;
 }
 
 div.image-gallery {
@@ -324,7 +364,7 @@ div.image-gallery {
   div.image-gallery {
     display: flex;
     flex: 1 1 auto;
-    padding: 1rem;
+    padding: 1rem 0;
     justify-content: space-around;
   }
 }
@@ -358,6 +398,19 @@ tr:hover {
   background-color: #fbf6d9;
 }
 
+@media all and (min-width: 600px) {
+  div.rentals {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  div.rentals div, .rentals table{
+    width: 48%;
+    margin: 0;
+  }
+}
+
 
 /*  ## LOCATION  --------------------------------------  */
 
@@ -377,8 +430,8 @@ footer {
   padding: 2rem 0;
 }
 
-footer div{
-  padding-top: 0.5rem;
+footer div {
+  margin: 0;
 }
 
 footer p, footer a {
@@ -416,17 +469,27 @@ nav.social-media {
   footer {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 3.5rem 2rem 1.5rem;
+    padding: 2rem 3rem 2rem 1.5rem;
+  }
+
+  footer div {
+    text-align: left;
+  }
+
+  nav.social-media {
+    margin: 0;
+    max-width: 110px;
   }
 
   .social-media li {
     display: block;
+    margin: 0.4rem 0;
+
   }
 
   .social-media li a span {
     display: inline;
   }
-
 }
 
 /*  # CLEARFIX  --------------------------------------  */
